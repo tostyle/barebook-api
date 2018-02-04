@@ -1,0 +1,95 @@
+{
+  "name": "order",
+  "plural": "orders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "total_page": {
+      "type": "number"
+    },
+    "total_book": {
+      "type": "number"
+    },
+    "cover_type": {
+      "type": "string"
+    },
+    "cover_color": {
+      "type": "string"
+    },
+    "paper_color": {
+      "type": "string"
+    },
+    "file": {
+      "type": "object"
+    },
+    "pages": {
+      "type": [
+        "object"
+      ]
+    },
+    "technics": {
+      "type": [
+        "any"
+      ]
+    },
+    "deliveries": {
+      "type": [
+        "any"
+      ]
+    },
+    "payment": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "objective": {
+      "type": "belongsTo",
+      "model": "objectives",
+      "foreignKey": "objective_id"
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "categories",
+      "foreignKey": "category_id"
+    },
+    "package": {
+      "type": "belongsTo",
+      "model": "packages",
+      "foreignKey": "package_id"
+    },
+    "promotion": {
+      "type": "belongsTo",
+      "model": "promotion",
+      "foreignKey": "promotion_id"
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "ownerId"
+    },
+    "cover": {
+      "type": "belongsTo",
+      "model": "covers",
+      "foreignKey": "cover_id"
+    },
+    "size": {
+      "type": "belongsTo",
+      "model": "sizes",
+      "foreignKey": "size_id"
+    },
+    "binding": {
+      "type": "belongsTo",
+      "model": "bindTypes",
+      "foreignKey": "bind_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
